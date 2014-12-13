@@ -48,7 +48,23 @@
         </div>
     </nav>
     <script>
-        changeContent(0);
+        init();
+
+        function init() {
+            var haveTag = false;
+            var currentTag = window.location.href.split("#");
+            var link = ["quotations", "motto", "independent", "letgo", "growup", "discipline"];
+            for(var index in link) {
+                if (currentTag[1] == link[index]) {
+                    changeContent(index);
+                    haveTag = true;
+                    break;
+                }
+            }
+            if (!haveTag)
+                changeContent(0);
+        }
+
         function changeContent(index) {
             var data = [
                 "<h2 style='color: black'>語錄</h2><ol><li>你看看你~~</li></ol>",
