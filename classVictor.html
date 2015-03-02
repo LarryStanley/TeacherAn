@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>昱安老師談選課</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel='stylesheet' href='animate.css'>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<style>
+		.center {
+			position:absolute; width:70%; height:100px; top:0; bottom:0; left:0; right:0; margin:auto;
+			text-align: center;
+			font-size: 60px;
+		}
+
+		.animated {
+			background: -webkit-linear-gradient(top,#ED7826 0,#E62E25 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	</style>
+</head>
+<body>
+	<div class='center'>
+	</div>
+	<script>
+		var data = ["你這學期26學分了嗎","我是昱安老師","我","5學期","52堂課","130學分","叫我","單季學分王"];
+		var style = ["zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn"];
+		var colorOne = [""]
+		var index = 0;
+		showText();
+		function showText() {
+			$('.center').html("<div class='animated "+style[index] +"'>"+data[index]+"</div>").delay(800).queue(function(){
+				index++;
+				if (index < 8){
+					showText();
+					$(this).dequeue();
+				}else
+					setTimeout(function(){
+						window.location="http://larrystanley.github.io/TeacherAn/";		
+					}, 2000);
+			});
+		}
+	</script>
+</body>
+</html>
