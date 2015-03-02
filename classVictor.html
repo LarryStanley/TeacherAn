@@ -28,7 +28,7 @@
 		var style = ["zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn","zoomIn"];
 		var colorOne = [""]
 		var index = 0;
-		showText();
+		setTimeoute(showText(),1500);
 		function showText() {
 			$('.center').html("<div class='animated "+style[index] +"'>"+data[index]+"</div>").delay(800).queue(function(){
 				index++;
